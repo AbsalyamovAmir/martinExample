@@ -17,7 +17,7 @@ public class RequestCreateUserImpl implements RequestCreateUser {
 
     @Override
     public void create(UserRequestData userRequestData) {
-        User user = User.create(userRequestData);
+        User user = User.create(userRequestData.getId(), userRequestData.getName());
         userGateway.save(user);
     }
 }
